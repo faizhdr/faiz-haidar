@@ -1,4 +1,4 @@
-# Next.js & NextUI Template
+# Next.js & NextUI
 
 ## Technologies Used
 
