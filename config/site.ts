@@ -32,10 +32,10 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: "https://github.com/faizhdr",
 		twitter: "https://twitter.com/trdgiofn",
-		docs: "https://nextui.org",
+		instagram: "https://www.instagram.com/fz.hdr",
 		discord: "https://discord.gg/9b6yyZKmH4",
-    	sponsor: "https://patreon.com/jrgarciadev"
+		github: "https://github.com/faizhdr",
+    	linkedin: "https://www.linkedin.com/in/faizhdr/"
 	},
 };

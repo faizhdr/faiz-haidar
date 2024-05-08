@@ -4,8 +4,6 @@ import { Tooltip } from "@nextui-org/tooltip";
 import { Button } from "@nextui-org/button";
 import { Avatar } from "@nextui-org/avatar";
 import { siteConfig } from "@/config/site";
-import Motion from "framer-motion";
-import { Image } from "@nextui-org/image";
 import { Badge } from '@nextui-org/badge';
 import { Divider } from "@nextui-org/divider";
 import { title, subtitle } from "@/components/primitives";
@@ -17,7 +15,7 @@ import {
   DiscordIcon,
   LinkedInIcon,
 } from "@/components/icons";
-import { DevTool, PackageM, TechStack, Workstation } from "@/components/home";
+import { Tools } from "@/components/home";
 
 export default function Home() {
   return (
@@ -29,7 +27,7 @@ export default function Home() {
               isBordered
               radius="full"
               className="w-20 h-20"
-              src="/profile-photo.png"
+              src="/profile.png"
             />
           </Badge>
           <div className="flex flex-col ml-5 mb-3">
@@ -47,21 +45,13 @@ export default function Home() {
         </h2>
       </div>
       <div className="flex gap-3 mt-3">
-        <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-          <TwitterIcon className="text-default-500 hover:fill-red-500" />
-        </Link>
-        <Link isExternal href={siteConfig.links.twitter} aria-label="Instagram">
-          <InstagramIcon className="text-default-500" />
-        </Link>
-        <Link isExternal href={siteConfig.links.discord} aria-label="Discord">
-          <DiscordIcon className="text-default-500" />
-        </Link>
-        <Link isExternal href={siteConfig.links.github} aria-label="Github">
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <Link isExternal href={siteConfig.links.twitter} aria-label="Instagram">
-          <LinkedInIcon className="text-default-500" />
-        </Link>
+            {Tools.links.map((data) => (
+              <Tooltip key={data.title} placement='bottom' showArrow={true} content={data.title}>
+              <Link isExternal href={data.link}>
+                {data.icon && React.createElement(data.icon, { className: "text-default-500" })}  
+              </Link>
+              </Tooltip>
+            ))}
       </div>
 
       <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
@@ -105,7 +95,7 @@ export default function Home() {
           </CardHeader>
           <Divider />
           <CardBody className="gap-5 grid grid-cols-5">
-            {TechStack.data.map((data) => (
+            {Tools.TechStack.map((data) => (
               <Tooltip key={data.title} showArrow={true} content={data.title}>
                 {data.icon && React.createElement(data.icon, { className: "text-default-500" })}
               </Tooltip>
@@ -121,7 +111,7 @@ export default function Home() {
           </CardHeader>
           <Divider />
           <CardBody className="gap-5 grid grid-cols-5">
-            {PackageM.data.map((data) => (
+            {Tools.PackageM.map((data) => (
               <Tooltip key={data.title} showArrow={true} content={data.title}>
                 {data.icon && React.createElement(data.icon, { className: "text-default-500" })}
               </Tooltip>
@@ -137,7 +127,7 @@ export default function Home() {
           </CardHeader>
           <Divider />
           <CardBody className="gap-5 grid grid-cols-5">
-            {DevTool.data.map((data) => (
+            {Tools.DevTool.map((data) => (
               <Tooltip key={data.title} showArrow={true} content={data.title}>
                 {data.icon && React.createElement(data.icon, { className: "text-default-500" })}
               </Tooltip>
@@ -153,7 +143,7 @@ export default function Home() {
           </CardHeader>
           <Divider />
           <CardBody className="gap-5 grid grid-cols-5">
-            {Workstation.data.map((data) => (
+            {Tools.Workstation.map((data) => (
               <Tooltip key={data.title} showArrow={true} content={data.title}>
                 {data.icon && React.createElement(data.icon, { className: "text-default-500" })}
               </Tooltip>

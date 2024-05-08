@@ -1,20 +1,15 @@
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
-	NavbarMenu,
-	NavbarMenuToggle,
 	NavbarBrand,
 	NavbarItem,
-	NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
 import { useRouter } from 'next/router';
 import { link as linkStyles } from "@nextui-org/theme";
-import { Card } from "@nextui-org/card";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { Divider } from "@nextui-org/divider";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
 	AboutIcon,
@@ -34,13 +29,13 @@ export const Navbar = () => {
 			</NavbarContent>
 			<NavbarContent className="md:hidden basis-2" justify="start">
 				<div className="grid grid-cols-3 gap-9 pr-3 py-2 ">
-					<Link href="/">
+					<Link href="/" aria-label="Home">
 						<HomeIcon className="text-default-500" />
 					</Link>
-					<Link href="/projects">
+					<Link href="/projects" aria-label="Projects">
 						<ProjectIcon className="text-default-500" />
 					</Link>
-					<Link href="/about">
+					<Link href="/about" aria-label="About">
 						<AboutIcon className="text-default-500" />
 					</Link>
 				</div>

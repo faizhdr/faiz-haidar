@@ -1,7 +1,36 @@
-import { AndroidStudioIcon, BootstrapIcon, FigmaIcon, GitIcon, LaravelIcon, NextJSIcon, NpmIcon, OperaIcon, PcIcon, PhoneIcon, PnpmIcon, Postman, ReactJSIcon, TailwindIcon, ViteIcon, VsCodeIcon } from "./icons";
+import { siteConfig } from "@/config/site";
+import { AndroidStudioIcon, BootstrapIcon, DiscordIcon, FigmaIcon, GitIcon, GithubIcon, InstagramIcon, LaravelIcon, LinkedInIcon, NextJSIcon, NpmIcon, OperaIcon, PcIcon, PhoneIcon, PnpmIcon, Postman, ReactJSIcon, TailwindIcon, TwitterIcon, ViteIcon, VsCodeIcon } from "./icons";
 
-export const TechStack = {
-    data : [
+export const Tools = {
+    links: [
+		{
+			icon: TwitterIcon,
+			title: "Twitter",
+			link: siteConfig.links.twitter, 
+		},
+		{
+			icon: InstagramIcon,
+			title: "Instagram",
+			link: siteConfig.links.instagram,
+		},
+		{
+			icon: DiscordIcon,
+			title: "Discord",
+			link: siteConfig.links.discord,
+		},
+		{
+			icon: GithubIcon,
+			title: "Github",
+			link: siteConfig.links.github,
+		},
+		{
+			icon: LinkedInIcon,
+			title: "LinkedIn",
+			link: siteConfig.links.linkedin,
+		},
+	],
+
+    TechStack : [
         {
             icon : LaravelIcon,
             title: "Laravel"
@@ -26,11 +55,9 @@ export const TechStack = {
             icon : ViteIcon,
             title: "Vite"
         },
-    ]
-};
+    ],
 
-export const PackageM = {
-    data : [
+    PackageM : [
         {
             icon : NpmIcon,
             title: "NPM"
@@ -39,11 +66,9 @@ export const PackageM = {
             icon : PnpmIcon,
             title: "PNPM"
         },
-    ]
-};
+    ],
 
-export const DevTool = {
-    data : [
+    DevTool : [
         {
             icon : FigmaIcon,
             title: "Figma"
@@ -68,11 +93,9 @@ export const DevTool = {
             icon : Postman,
             title: "Postman"
         },
-    ]
-};
+    ],
 
-export const Workstation = {
-    data : [
+    Workstation : [
         {
             icon : PcIcon,
             title: "Intel(R) Core(TM) i7-10700"
